@@ -156,19 +156,45 @@
     //選択したカードを分解する
     function checkcard($checkcard){
         $position = substr($checkcard, 0, 8);
-        if(is_numeric(substr($checkcard, 8, 2))){
-            $thenum = substr($checkcard, 8, 2);
-            $themark = substr($checkcard, 10);
-        } else {
-            $thenum = substr($checkcard, 8, 1);
-            $themark = substr($checkcard, 9);
-        }
-        $thecard = array(
-                'mark' => $themark,
-                'num' => $thenum,
-                );
+        if(strpos($position, "mycol") !== false){
+            if(is_numeric(substr($checkcard, 8, 2))){
+                $index = substr($checkcard, 8, 2);
+                if(is_numeric(substr($checkcard, 12, 2))){
+                    $thenum = substr($checkcard, 12, 2);
+                    $themark = substr($checkcard, 14);
+                } else {
+                    $thenum = substr($checkcard, 12, 1);
+                    $themark = substr($checkcard, 13);
+                }
+            } else {
+                $index = substr($checkcard, 8, 1);
+                if(is_numeric(substr($checkcard, 11, 2))){
+                    $thenum = substr($checkcard, 11, 2);
+                    $themark = substr($checkcard, 13);
+                } else {
+                    $thenum = substr($checkcard, 11, 1);
+                    $themark = substr($checkcard, 12);
+                }
+            }
 
-        return array($position, $thenum, $themark, $thecard);
+        } else {
+            if(is_numeric(substr($checkcard, 8, 2))){
+                $thenum = substr($checkcard, 8, 2);
+                $themark = substr($checkcard, 10);
+            } else {
+                $thenum = substr($checkcard, 8, 1);
+                $themark = substr($checkcard, 9);
+            }
+
+            $index = null;
+        }
+
+        $thecard = array(
+            'mark' => $themark,
+            'num' => $thenum,
+            );
+
+        return array($position, $index, $thenum, $themark, $thecard);
     }
 
     //トランプを配置できるかチェックする
@@ -178,8 +204,11 @@
                 $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
             ){
 
-        list($holdcardposition, $holdnum, $holdmark, $holdcard) = checkcard($_holdcard);
-        list($pickcardposition, $picknum, $pickmark, $pickcard) = checkcard($_pickcard);
+        list($holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard) = checkcard($_holdcard);
+        list($pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard) = checkcard($_pickcard);
+
+        // echo $holdcardposition . "<br>" . $holdcardindex . "<br>" . $holdnum . "<br>" . $holdmark . "<br>";
+        // echo $pickcardposition . "<br>" . $pickcardindex . "<br>" . $picknum . "<br>" . $pickmark . "<br>";
 
         switch($holdcardposition){
             case 'deckcard':
@@ -275,6 +304,39 @@
                     $spades, $hearts, $diamonds, $clubs, 
                     $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
                 ) = spadesshift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case '02hearts':
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = heartsshift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'diamonds':
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = diamondsshift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case '004clubs':
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = clubsshift(
                     $holdcardposition, $holdnum, $holdmark, $holdcard, 
                     $pickcardposition, $picknum, $pickmark, $pickcard, 
                     $spades, $hearts, $diamonds, $clubs,

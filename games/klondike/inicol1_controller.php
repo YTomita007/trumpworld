@@ -283,7 +283,7 @@
             case 'heart':
                 switch($pickcardposition){
                     case 'col1card':
-                        if($pickmark == "heart" || $pickmark == "diamond"){
+                        if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
                                 $mycol1[] = array_shift($inicol1);
                             }
@@ -419,7 +419,7 @@
             case 'diamond':
                 switch($pickcardposition){
                     case 'col1card':
-                        if($pickmark == "heart" || $pickmark == "diamond"){
+                        if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
                                 $mycol1[] = array_shift($inicol1);
                             }

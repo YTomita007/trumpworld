@@ -105,6 +105,7 @@ label {
   display: inline-flex;
   position: fixed;
   top: 175px;
+  z-index: 1000;
 }
 
 .button-1 {
@@ -146,4 +147,49 @@ label {
   color: #fff;
   font-weight: bold;
   padding: 20px;
+}
+
+.cardscolumns {
+  position: relative;
+  height: 1000px;
+}
+
+.cardscolumns .row-1 {
+  position: absolute;
+  top: 35px;
+}
+
+.cardscolumns .row-2 {
+  position: absolute;
+  top: 70px;
+}
+
+.cardscolumns .row-3 {
+  position: absolute;
+  top: 105px;
+}
+
+.cardscolumns .row-4 {
+  position: absolute;
+  top: 140px;
+}
+
+.cardscolumns .row-5 {
+  position: absolute;
+  top: 175px;
+}
+
+.cardscolumns .row-6 {
+  position: absolute;
+  top: 210px;
+}
+
+.cardscolumns .row-7 {
+  position: absolute;
+  top: 245px;
+}
+
+.cardscolumns .row-8 {
+  position: absolute;
+  top: 280px;
 }

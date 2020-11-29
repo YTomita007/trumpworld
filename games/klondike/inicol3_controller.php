@@ -1,5 +1,5 @@
 <?php
-    //列１からカードを動かす
+    //列３からカードを動かす
     function inicol3shift(
             $holdcardposition, $holdnum, $holdmark, $holdcard, 
             $pickcardposition, $picknum, $pickmark, $pickcard, 
@@ -283,7 +283,7 @@
             case 'heart':
                 switch($pickcardposition){
                     case 'col1card':
-                        if($pickmark == "heart" || $pickmark == "diamond"){
+                        if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
                                 $mycol1[] = array_shift($inicol3);
                             }
@@ -419,7 +419,7 @@
             case 'diamond':
                 switch($pickcardposition){
                     case 'col1card':
-                        if($pickmark == "heart" || $pickmark == "diamond"){
+                        if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
                                 $mycol1[] = array_shift($inicol3);
                             }
