@@ -12,6 +12,13 @@
     require '02hearts_controller.php';
     require '03diamonds_controller.php';
     require '04clubs_controller.php';
+    require 'mycol1_controller.php';
+    require 'mycol2_controller.php';
+    require 'mycol3_controller.php';
+    require 'mycol4_controller.php';
+    require 'mycol5_controller.php';
+    require 'mycol6_controller.php';
+    require 'mycol7_controller.php';
 
     //プログラムの初期設定
     function checkin(){
@@ -89,23 +96,34 @@
 
         for($i=0;$i<52;$i++){
             if(0<=$i && $i <1){
-                $col1[] = array_shift($cards);
+                $inicol1[] = array_shift($cards);
             } elseif (1<=$i && $i <3){
-                $col2[] = array_shift($cards);
+                $inicol2[] = array_shift($cards);
             } elseif (3<=$i && $i <6){
-                $col3[] = array_shift($cards);
+                $inicol3[] = array_shift($cards);
             } elseif(6<=$i && $i <10){
-                $col4[] = array_shift($cards);
+                $inicol4[] = array_shift($cards);
             } elseif (10<=$i && $i <15){
-                $col5[] = array_shift($cards);
+                $inicol5[] = array_shift($cards);
             } elseif (15<=$i && $i <21){
-                $col6[] = array_shift($cards);
+                $inicol6[] = array_shift($cards);
             } elseif(21<=$i && $i <28){
-                $col7[] = array_shift($cards);
+                $inicol7[] = array_shift($cards);
             }
         }
+
+        $mycol1[] = array_pop($inicol1);
+        $mycol2[] = array_pop($inicol2);
+        $mycol3[] = array_pop($inicol3);
+        $mycol4[] = array_pop($inicol4);
+        $mycol5[] = array_pop($inicol5);
+        $mycol6[] = array_pop($inicol6);
+        $mycol7[] = array_pop($inicol7);
     
-        return array($cards, $col1, $col2, $col3, $col4, $col5, $col6, $col7);
+        return array(
+            $cards, $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7, 
+            $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+        );
     }
 
     function allcounts(
@@ -341,6 +359,91 @@
                     $pickcardposition, $picknum, $pickmark, $pickcard, 
                     $spades, $hearts, $diamonds, $clubs,
                     $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol001':
+                $mycol1length = count($mycol1);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol1shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol1length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol002':
+                $mycol2length = count($mycol2);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol2shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol2length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol003':
+                $mycol3length = count($mycol3);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol3shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol3length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol004':
+                $mycol4length = count($mycol4);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol4shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol4length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol005':
+                $mycol5length = count($mycol5);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol5shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol5length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol006':
+                $mycol6length = count($mycol6);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol6shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol6length,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'mycol007':
+                $mycol7length = count($mycol7);
+                $inicol7length = count($inicol7);
+                list(
+                    $spades, $hearts, $diamonds, $clubs, $inicol7, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = mycol7shift(
+                    $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $mycol7length, $inicol7length,
+                    $inicol7, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
                 );
                 break;
         }
