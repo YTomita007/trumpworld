@@ -9,9 +9,9 @@
     require 'inicol6_controller.php';
     require 'inicol7_controller.php';
     require '01spades_controller.php';
-    // require '02hearts_controller.php';
-    // require '03diamonds_controller.php';
-    // require '04clubs_controller.php';
+    require '02hearts_controller.php';
+    require '03diamonds_controller.php';
+    require '04clubs_controller.php';
 
     //プログラムの初期設定
     function checkin(){
