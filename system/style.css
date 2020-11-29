@@ -1,0 +1,149 @@
+h1,h2,h3,p {
+  font-family: 'Playfair Display', serif;
+  color: rgb(70, 6, 64);
+}
+
+img {
+    max-width: 200px;
+}
+
+.commandbuttan ul {
+  list-style: none;
+  overflow: hidden;
+}
+  
+.commandbuttan ul li {
+  width: 140px;
+  text-align: center;
+  background-color: #333;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+}
+  
+.commandbuttan ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.backgroundbase {
+  background-image: url('images/background.png');
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+}
+
+.alternative {
+  padding: 20px;
+  height: 350px;
+  display: inline-block;
+}
+
+.alternative img {
+  max-height: 350px;
+}
+
+.alternative h3 {
+  color: darkblue;
+}
+
+input[type=radio] {
+  display: none; /* ラジオボタンを非表示にする */
+}
+input[type="radio"]:checked + label {
+  background: #31A9EE;/* マウス選択時の背景色を指定する */
+  padding: 5px;
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+input[type=checkbox] {
+  display: none; /* ラジオボタンを非表示にする */
+}
+input[type="checkbox"]:checked + label {
+  background: #31A9EE;/* マウス選択時の背景色を指定する */
+  padding: 5px;
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.label:hover {
+  background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+}
+
+label {
+  display: inline-block; /* ブロックレベル要素化する */
+  margin: 5px; /* ボックス外側の余白を指定する */
+  color: #b20000; /* フォントの色を指定 */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 45px; /* 行の高さを指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+  border-radius: 5px; /* 角丸を指定する */
+}
+
+.yourside {
+  background-color: aquamarine;
+}
+
+.oppside {
+  background-color: pink;
+}
+
+.commandbox {
+  display: inline-flex;
+}
+
+.memorygame img {
+  max-width: 120px;
+}
+
+.sevenrows img {
+  max-width: 120px;
+}
+
+.klondike .commandbox {
+  display: inline-flex;
+  position: fixed;
+  top: 175px;
+}
+
+.button-1 {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0.5em 1em 0.3em;
+  color: #ffffff;
+  border-radius: 25px;
+  background-color: blueviolet;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.klondike img {
+  max-width: 120px;
+}
+
+.klondike .leftside {
+  float: left;
+}
+
+.klondike ul {
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+  
+.klondike ul li {
+  width: 140px;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 2px;
+}
+  
+.klondike ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+}

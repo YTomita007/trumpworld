@@ -1,0 +1,292 @@
+<?php
+
+    require 'deck_controller.php';
+    require 'inicol1_controller.php';
+    require 'inicol2_controller.php';
+    require 'inicol3_controller.php';
+    require 'inicol4_controller.php';
+    require 'inicol5_controller.php';
+    require 'inicol6_controller.php';
+    require 'inicol7_controller.php';
+    require '01spades_controller.php';
+    // require '02hearts_controller.php';
+    // require '03diamonds_controller.php';
+    // require '04clubs_controller.php';
+
+    //プログラムの初期設定
+    function checkin(){
+
+        $cards_f    = array();     //山札表
+        $cards_r    = array();     //山札裏
+        $spades     = array();     //スペード組札
+        $clubs      = array();     //クラブ組札
+        $diamonds   = array();     //ダイヤモンド組札
+        $hearts     = array();     //ハート組札
+        $inicol1    = array();     //初期場札１
+        $inicol2    = array();     //初期場札２
+        $inicol3    = array();     //初期場札３
+        $inicol4    = array();     //初期場札４
+        $inicol5    = array();     //初期場札５
+        $inicol6    = array();     //初期場札６
+        $inicol7    = array();     //初期場札７
+        $mycol1     = array();     //手札場札１
+        $mycol2     = array();     //手札場札２
+        $mycol3     = array();     //手札場札３
+        $mycol4     = array();     //手札場札４
+        $mycol5     = array();     //手札場札５
+        $mycol6     = array();     //手札場札６
+        $mycol7     = array();     //手札場札７
+        $title      = "Klondike";   //ゲームタイトル
+        $deployflag = false;
+                
+        if(!isset($_GET['reset'])){
+            if(isset($_SESSION['cards_f']))     $cards_f        = $_SESSION['cards_f'];
+            if(isset($_SESSION['cards_r']))     $cards_r        = $_SESSION['cards_r'];
+            if(isset($_SESSION['spades']))      $spades         = $_SESSION['spades'];
+            if(isset($_SESSION['hearts']))      $hearts         = $_SESSION['hearts'];
+            if(isset($_SESSION['diamonds']))    $diamonds       = $_SESSION['diamonds'];
+            if(isset($_SESSION['clubs']))       $clubs          = $_SESSION['clubs'];
+            if(isset($_SESSION['inicol1']))     $inicol1        = $_SESSION['inicol1'];
+            if(isset($_SESSION['inicol2']))     $inicol2        = $_SESSION['inicol2'];
+            if(isset($_SESSION['inicol3']))     $inicol3        = $_SESSION['inicol3'];
+            if(isset($_SESSION['inicol4']))     $inicol4        = $_SESSION['inicol4'];
+            if(isset($_SESSION['inicol5']))     $inicol5        = $_SESSION['inicol5'];
+            if(isset($_SESSION['inicol6']))     $inicol6        = $_SESSION['inicol6'];
+            if(isset($_SESSION['inicol7']))     $inicol7        = $_SESSION['inicol7'];
+            if(isset($_SESSION['mycol1']))      $mycol1         = $_SESSION['mycol1'];
+            if(isset($_SESSION['mycol2']))      $mycol2         = $_SESSION['mycol2'];
+            if(isset($_SESSION['mycol3']))      $mycol3         = $_SESSION['mycol3'];
+            if(isset($_SESSION['mycol4']))      $mycol4         = $_SESSION['mycol4'];
+            if(isset($_SESSION['mycol5']))      $mycol5         = $_SESSION['mycol5'];
+            if(isset($_SESSION['mycol6']))      $mycol6         = $_SESSION['mycol6'];
+            if(isset($_SESSION['mycol7']))      $mycol7         = $_SESSION['mycol7'];
+        }
+
+        $cards_fcnt = count($cards_f);
+
+        return array(
+            $cards_f, $cards_r, $cards_fcnt, $spades, $hearts, $diamonds, $clubs,
+            $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7,
+            $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7,
+            $title, $deployflag
+        );
+    }
+
+    //初期設定
+    function initialize(){
+        $cards = array();
+        $marks = array('spade', 'heart', 'diamond', 'club');
+    
+        foreach($marks as $mark){
+            for($i=1;$i<=13;$i++){
+                $cards[] = array(
+                    'mark' => $mark,
+                    'num' => $i,
+                );
+            }
+        }
+        shuffle($cards);
+
+        for($i=0;$i<52;$i++){
+            if(0<=$i && $i <1){
+                $col1[] = array_shift($cards);
+            } elseif (1<=$i && $i <3){
+                $col2[] = array_shift($cards);
+            } elseif (3<=$i && $i <6){
+                $col3[] = array_shift($cards);
+            } elseif(6<=$i && $i <10){
+                $col4[] = array_shift($cards);
+            } elseif (10<=$i && $i <15){
+                $col5[] = array_shift($cards);
+            } elseif (15<=$i && $i <21){
+                $col6[] = array_shift($cards);
+            } elseif(21<=$i && $i <28){
+                $col7[] = array_shift($cards);
+            }
+        }
+    
+        return array($cards, $col1, $col2, $col3, $col4, $col5, $col6, $col7);
+    }
+
+    function allcounts(
+                $cards_f, $cards_r, $spades, $hearts, $diamonds, $clubs,
+                $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7,
+                $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+        ){
+
+        $cards_fcnt     = count($cards_f);
+        $cards_rcnt     = count($cards_r);
+        $spadescnt      = count($spades);
+        $heartscnt      = count($hearts);
+        $diamondscnt    = count($diamonds);
+        $clubscnt       = count($clubs);
+        $inicol1cnt     = count($inicol1);
+        $inicol2cnt     = count($inicol2);
+        $inicol3cnt     = count($inicol3);
+        $inicol4cnt     = count($inicol4);
+        $inicol5cnt     = count($inicol5);
+        $inicol6cnt     = count($inicol6);
+        $inicol7cnt     = count($inicol7);
+        $mycol1cnt      = count($mycol1);
+        $mycol2cnt      = count($mycol2);
+        $mycol3cnt      = count($mycol3);
+        $mycol4cnt      = count($mycol4);
+        $mycol5cnt      = count($mycol5);
+        $mycol6cnt      = count($mycol6);
+        $mycol7cnt      = count($mycol7);
+
+        return array(
+            $cards_fcnt, $cards_rcnt, $spadescnt, $heartscnt, $diamondscnt, $clubscnt, 
+            $inicol1cnt, $inicol2cnt, $inicol3cnt, $inicol4cnt, $inicol5cnt, $inicol6cnt, $inicol7cnt, 
+            $mycol1cnt, $mycol2cnt, $mycol3cnt, $mycol4cnt, $mycol5cnt, $mycol6cnt, $mycol7cnt
+        );
+    }
+
+    //passの操作について動きを振り分ける
+    function deckcontroller($cards_fcnt, $cards_f, $cards_r){
+        if(0 < $cards_fcnt){
+            list($cards_f, $cards_r) = deckpass($cards_f, $cards_r);
+        } else {
+            list($cards_f, $cards_r) = deckturn($cards_f, $cards_r);
+        }
+
+        return array($cards_f, $cards_r);
+    }
+
+    //選択したカードを分解する
+    function checkcard($checkcard){
+        $position = substr($checkcard, 0, 8);
+        if(is_numeric(substr($checkcard, 8, 2))){
+            $thenum = substr($checkcard, 8, 2);
+            $themark = substr($checkcard, 10);
+        } else {
+            $thenum = substr($checkcard, 8, 1);
+            $themark = substr($checkcard, 9);
+        }
+        $thecard = array(
+                'mark' => $themark,
+                'num' => $thenum,
+                );
+
+        return array($position, $thenum, $themark, $thecard);
+    }
+
+    //トランプを配置できるかチェックする
+    function carddeploy(
+                $_holdcard, $_pickcard, $cards_f, $cards_r, $spades, $hearts, $diamonds, $clubs, 
+                $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7,
+                $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            ){
+
+        list($holdcardposition, $holdnum, $holdmark, $holdcard) = checkcard($_holdcard);
+        list($pickcardposition, $picknum, $pickmark, $pickcard) = checkcard($_pickcard);
+
+        switch($holdcardposition){
+            case 'deckcard':
+                list(
+                    $cards_f, $cards_r, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = deckshift(
+                    $cards_f, $cards_r, $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col1card':
+                list(
+                    $inicol1, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol1shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol1,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col2card':
+                list(
+                    $inicol2, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol2shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol2,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col3card':
+                list(
+                    $inicol3, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol3shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol3,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col4card':
+                list(
+                    $inicol4, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol4shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol4,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col5card':
+                list(
+                    $inicol5, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol5shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol5,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col6card':
+                list(
+                    $inicol6, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol6shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol6,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case 'col7card':
+                list(
+                    $inicol7, $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = inicol7shift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs, $inicol7,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+            case '01spades':
+                list(
+                    $spades, $hearts, $diamonds, $clubs, 
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                ) = spadesshift(
+                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
+                    $pickcardposition, $picknum, $pickmark, $pickcard, 
+                    $spades, $hearts, $diamonds, $clubs,
+                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                );
+                break;
+        }
+
+        return array(
+            $cards_f, $cards_r, $spades, $hearts, $diamonds, $clubs, 
+            $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7, 
+            $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+        );
+    }
+?>
