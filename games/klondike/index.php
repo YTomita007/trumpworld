@@ -36,7 +36,9 @@
     } elseif(isset($_GET['pass'])) {
         list($cards_f, $cards_r) = deckcontroller($cards_fcnt, $cards_f, $cards_r);
     } else {
-        list($cards_f, $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7) = initialize();
+        list(
+            $cards_f, $inicol1, $inicol2, $inicol3, $inicol4, $inicol5, $inicol6, $inicol7, 
+            $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7) = initialize();
     }
 
     list(
@@ -69,6 +71,9 @@
     $_SESSION['mycol5']     = $mycol5;
     $_SESSION['mycol6']     = $mycol6;
     $_SESSION['mycol7']     = $mycol7;
+
+    print_r($inicol7);
+    print_r($mycol7);
 ?>
 
 <html>
