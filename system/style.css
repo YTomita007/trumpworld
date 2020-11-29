@@ -104,7 +104,8 @@ label {
 .klondike .commandbox {
   display: inline-flex;
   position: fixed;
-  top: 175px;
+  top: 125px;
+  right: 300px;
   z-index: 1000;
 }
 

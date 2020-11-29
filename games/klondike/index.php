@@ -3,7 +3,7 @@
 
     ini_set( 'display_errors', 1 );
 
-    require 'klondike_controller.php';
+    require 'controllers/klondike_controller.php';
 
     list(
         $cards_f, $cards_r, $cards_fcnt, $spades, $hearts, $diamonds, $clubs,
@@ -101,29 +101,6 @@
         ?>
 
         <form method="post" name="cards_form" action="index.php">
-            <div class="commandbox">
-                <div class="commandbuttan">
-                    <ul>
-                        <?php
-                            if($deployflag == true){
-                        ?>
-                        <input type="hidden" name="command" value="move" >
-                        <input type="hidden" name="holdcard" value="<?php echo $holdcard; ?>" >
-                        <li><a href="#" onclick="document.cards_form.submit();">Move</a></li>
-                        <li><a href="?release">Release</a></li>
-                        <?php
-                            } else {
-                        ?>
-                        <input type="hidden" name="command" value="pick" >
-                        <li><a href="#" onclick="document.cards_form.submit();">Pick</a></li>
-                        <?php
-                            }
-                        ?>
-                        <li><a href="?pass">Pass</a></li>
-                        <li><a href="?reset">Reset</a></li>
-                    </ul>
-                </div>
-            </div>
             <ul>
                 <li>
                 <?php
@@ -154,22 +131,22 @@
                 </li>
                 <li>
                     <?php
-                    include('./deck_spades.php');
+                    include('./views/deck_spades.php');
                     ?>
                 </li>
                 <li>
                     <?php
-                    include('./deck_hearts.php');
+                    include('./views/deck_hearts.php');
                     ?>
                 </li>
                 <li>
                     <?php
-                    include('./deck_diamonds.php');
+                    include('./views/deck_diamonds.php');
                     ?>
                 </li>
                 <li>
                     <?php
-                    include('./deck_clubs.php');
+                    include('./views/deck_clubs.php');
                     ?>
                 </li>
             </ul>
@@ -180,53 +157,76 @@
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column1.php');
+                        include('./views/column1.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column2.php');
+                        include('./views/column2.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column3.php');
+                        include('./views/column3.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column4.php');
+                        include('./views/column4.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column5.php');
+                        include('./views/column5.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column6.php');
+                        include('./views/column6.php');
                         ?>
                     </div>
                 </li>
                 <li>
                     <div class="cardscolumns">
                         <?php
-                        include('./column7.php');
+                        include('./views/column7.php');
                         ?>
                     </div>
                 </li>
             </ul>
+            <div class="commandbox">
+                <div class="commandbuttan">
+                    <ul>
+                        <?php
+                            if($deployflag == true){
+                        ?>
+                        <input type="hidden" name="command" value="move" >
+                        <input type="hidden" name="holdcard" value="<?php echo $holdcard; ?>" >
+                        <li><a href="#" onclick="document.cards_form.submit();">Move</a></li>
+                        <li><a href="?release">Release</a></li>
+                        <?php
+                            } else {
+                        ?>
+                        <input type="hidden" name="command" value="pick" >
+                        <li><a href="#" onclick="document.cards_form.submit();">Pick</a></li>
+                        <?php
+                            }
+                        ?>
+                        <li><a href="?pass">Pass</a></li>
+                        <li><a href="?reset">Reset</a></li>
+                    </ul>
+                </div>
+            </div>
         </form>
     </div>
 </body>
