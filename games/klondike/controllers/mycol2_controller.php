@@ -3,8 +3,8 @@
     function mycol2shift(
                 $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
                 $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
-                $spades, $hearts, $diamonds, $clubs, $mycol2length,
-                $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                $spades, $hearts, $diamonds, $clubs, $mycol2length, $inicol2length,
+                $inicol2, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
         ){
 
         $removekength = $mycol2length - $holdcardindex;
@@ -23,6 +23,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -46,6 +48,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -69,6 +73,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -92,6 +98,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -115,6 +123,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -138,6 +148,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -161,6 +173,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -276,6 +290,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -283,6 +299,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -290,6 +308,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -297,6 +317,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                 }
@@ -314,6 +336,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -337,6 +361,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -360,6 +386,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -383,6 +411,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -406,6 +436,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -429,6 +461,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -452,6 +486,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -567,6 +603,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -574,6 +612,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -581,6 +621,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -588,6 +630,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                 }
@@ -605,6 +649,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -628,6 +674,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -651,6 +699,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -674,6 +724,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -697,6 +749,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -720,6 +774,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -743,6 +799,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -858,6 +916,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -865,6 +925,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -872,6 +934,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -879,6 +943,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                 }
@@ -896,6 +962,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -919,6 +987,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -942,6 +1012,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -965,6 +1037,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -988,6 +1062,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -1011,6 +1087,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -1034,6 +1112,8 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol2[$i + $holdcardindex]);
                                 }
+                                $mycol2[0] = array_pop($inicol2);
+                                unset($inicol2[$inicol2length - 1]);
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol2, $holdcardindex);
@@ -1149,6 +1229,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -1156,6 +1238,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -1163,6 +1247,8 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -1170,12 +1256,14 @@
                             $temp = array_slice($mycol2, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol2[$holdcardindex]);
+                            $mycol2[0] = array_pop($inicol2);
+                            unset($inicol2[$inicol2length - 1]);
                         }
                         break;
                 }
                 break;
         }
 
-        return array($spades, $hearts, $diamonds, $clubs, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7);
+        return array($inicol2, $spades, $hearts, $diamonds, $clubs, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7);
     }
 ?>

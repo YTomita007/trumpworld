@@ -71,9 +71,6 @@
     $_SESSION['mycol5']     = $mycol5;
     $_SESSION['mycol6']     = $mycol6;
     $_SESSION['mycol7']     = $mycol7;
-
-    print_r($inicol7);
-    print_r($mycol7);
 ?>
 
 <html>
