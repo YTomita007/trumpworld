@@ -3,8 +3,8 @@
     function mycol1shift(
                 $holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard, 
                 $pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard, 
-                $spades, $hearts, $diamonds, $clubs, $mycol1length,
-                $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+                $spades, $hearts, $diamonds, $clubs, $mycol1length, $inicol1length,
+                $inicol1, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
         ){
 
         $removekength = $mycol1length - $holdcardindex;
@@ -15,7 +15,7 @@
                     case 'col1card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -23,9 +23,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol1[] = array_shift($temp);
@@ -38,20 +40,22 @@
                     case 'col2card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol2[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -61,7 +65,7 @@
                     case 'col3card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -69,9 +73,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol3[] = array_shift($temp);
@@ -84,7 +90,7 @@
                     case 'col4card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -92,9 +98,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol4[] = array_shift($temp);
@@ -107,7 +115,7 @@
                     case 'col5card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -115,9 +123,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol5[] = array_shift($temp);
@@ -130,20 +140,22 @@
                     case 'col6card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol6[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -153,20 +165,22 @@
                     case 'col7card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol7[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -176,7 +190,7 @@
                     case 'mycol001':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -190,10 +204,10 @@
                     case 'mycol002':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -204,7 +218,7 @@
                     case 'mycol003':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -218,7 +232,7 @@
                     case 'mycol004':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -232,7 +246,7 @@
                     case 'mycol005':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -246,10 +260,10 @@
                     case 'mycol006':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -260,10 +274,10 @@
                     case 'mycol007':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -276,6 +290,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -283,6 +299,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -290,6 +308,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -297,6 +317,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                 }
@@ -306,7 +328,7 @@
                     case 'col1card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -314,9 +336,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol1[] = array_shift($temp);
@@ -329,20 +353,22 @@
                     case 'col2card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol2[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -352,7 +378,7 @@
                     case 'col3card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -360,9 +386,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol3[] = array_shift($temp);
@@ -375,7 +403,7 @@
                     case 'col4card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -383,9 +411,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol4[] = array_shift($temp);
@@ -398,7 +428,7 @@
                     case 'col5card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -406,9 +436,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol5[] = array_shift($temp);
@@ -421,20 +453,22 @@
                     case 'col6card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol6[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -444,20 +478,22 @@
                     case 'col7card':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol7[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -467,7 +503,7 @@
                     case 'mycol001':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -481,10 +517,10 @@
                     case 'mycol002':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -495,7 +531,7 @@
                     case 'mycol003':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -509,7 +545,7 @@
                     case 'mycol004':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -523,7 +559,7 @@
                     case 'mycol005':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -537,10 +573,10 @@
                     case 'mycol006':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -551,10 +587,10 @@
                     case 'mycol007':
                         if($pickmark == "heart" || $pickmark == "diamond"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -567,6 +603,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -574,6 +612,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -581,6 +621,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -588,6 +630,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                 }
@@ -597,7 +641,7 @@
                     case 'col1card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -605,9 +649,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol1[] = array_shift($temp);
@@ -620,20 +666,22 @@
                     case 'col2card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol2[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -643,7 +691,7 @@
                     case 'col3card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -651,9 +699,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol3[] = array_shift($temp);
@@ -666,7 +716,7 @@
                     case 'col4card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -674,9 +724,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol4[] = array_shift($temp);
@@ -689,7 +741,7 @@
                     case 'col5card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -697,9 +749,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol5[] = array_shift($temp);
@@ -712,20 +766,22 @@
                     case 'col6card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol6[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -735,20 +791,22 @@
                     case 'col7card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol7[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -758,7 +816,7 @@
                     case 'mycol001':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -772,10 +830,10 @@
                     case 'mycol002':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -786,7 +844,7 @@
                     case 'mycol003':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -800,7 +858,7 @@
                     case 'mycol004':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -814,7 +872,7 @@
                     case 'mycol005':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -828,10 +886,10 @@
                     case 'mycol006':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -842,10 +900,10 @@
                     case 'mycol007':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -858,6 +916,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -865,6 +925,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -872,6 +934,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -879,6 +943,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                 }
@@ -888,7 +954,7 @@
                     case 'col1card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -896,9 +962,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol1[] = array_shift($temp);
@@ -911,20 +979,22 @@
                     case 'col2card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol2[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -934,7 +1004,7 @@
                     case 'col3card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -942,9 +1012,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol3[] = array_shift($temp);
@@ -957,7 +1029,7 @@
                     case 'col4card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -965,9 +1037,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol4[] = array_shift($temp);
@@ -980,7 +1054,7 @@
                     case 'col5card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -988,9 +1062,11 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
                                 $mycol5[] = array_shift($temp);
@@ -1003,20 +1079,22 @@
                     case 'col6card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol6[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -1026,20 +1104,22 @@
                     case 'col7card':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
                                 }
+                                $mycol1[0] = array_pop($inicol1);
+                                unset($inicol1[$inicol1length - 1]);
                             }
                         } elseif($pickmark == "empty"){
-                            $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                            $temp = array_slice($mycol1, $holdcardindex);
                             $tempcount = count($temp);
                             for($i=0;$i<$tempcount;$i++){
-                                $mycol7[] = array_shift($temp);
+                                $mycol1[] = array_shift($temp);
                             }
                             for($i=0;$i<$removekength;$i++){
                                 unset($mycol1[$i + $holdcardindex]);
@@ -1049,7 +1129,7 @@
                     case 'mycol001':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol1[] = array_shift($temp);
@@ -1063,10 +1143,10 @@
                     case 'mycol002':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol2[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -1077,7 +1157,7 @@
                     case 'mycol003':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol3[] = array_shift($temp);
@@ -1091,7 +1171,7 @@
                     case 'mycol004':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol4[] = array_shift($temp);
@@ -1105,7 +1185,7 @@
                     case 'mycol005':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
                                     $mycol5[] = array_shift($temp);
@@ -1119,10 +1199,10 @@
                     case 'mycol006':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol6[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -1133,10 +1213,10 @@
                     case 'mycol007':
                         if($pickmark == "spade" || $pickmark == "club"){
                             if($holdnum == $picknum - 1){
-                                $temp = array_slice($mycol1, $holdcardindex, $removekength);
+                                $temp = array_slice($mycol1, $holdcardindex);
                                 $tempcount = count($temp);
                                 for($i=0;$i<$tempcount;$i++){
-                                    $mycol7[] = array_shift($temp);
+                                    $mycol1[] = array_shift($temp);
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol1[$i + $holdcardindex]);
@@ -1149,6 +1229,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                     }
                         break;
                     case '02hearts':
@@ -1156,6 +1238,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case 'diamonds':
@@ -1163,6 +1247,8 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                     case '004clubs':
@@ -1170,12 +1256,14 @@
                             $temp = array_slice($mycol1, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol1[$holdcardindex]);
+                            $mycol1[0] = array_pop($inicol1);
+                            unset($inicol1[$inicol1length - 1]);
                         }
                         break;
                 }
                 break;
         }
 
-        return array($spades, $hearts, $diamonds, $clubs, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7);
+        return array($inicol1, $spades, $hearts, $diamonds, $clubs, $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7);
     }
 ?>
