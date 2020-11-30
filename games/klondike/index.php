@@ -71,6 +71,10 @@
     $_SESSION['mycol5']     = $mycol5;
     $_SESSION['mycol6']     = $mycol6;
     $_SESSION['mycol7']     = $mycol7;
+
+    echo $inicol1cnt . "<br>";
+    echo $mycol1cnt . "<br>";
+    print_r($mycol1);
 ?>
 
 <html>

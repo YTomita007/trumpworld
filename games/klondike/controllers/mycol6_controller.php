@@ -23,8 +23,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -48,8 +50,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -73,8 +77,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -98,8 +104,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -123,8 +131,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -148,8 +158,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -173,8 +185,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -198,6 +212,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -211,6 +229,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -226,6 +248,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -239,6 +265,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -254,6 +284,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -267,6 +301,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -282,6 +320,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -290,17 +332,21 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
-                    }
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
+                        }
                         break;
                     case '02hearts':
                         if($holdnum == $picknum + 1){
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case 'diamonds':
@@ -308,8 +354,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case '004clubs':
@@ -317,8 +365,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                 }
@@ -336,8 +386,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -361,8 +413,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -386,8 +440,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -411,8 +467,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -436,8 +494,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -461,8 +521,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -486,8 +548,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -511,6 +575,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -524,6 +592,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -539,6 +611,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -552,6 +628,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -567,6 +647,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -580,6 +664,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -595,6 +683,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -603,17 +695,21 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
-                    }
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
+                        }
                         break;
                     case '02hearts':
                         if($holdnum == $picknum + 1){
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case 'diamonds':
@@ -621,8 +717,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case '004clubs':
@@ -630,8 +728,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                 }
@@ -649,8 +749,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -674,8 +776,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -699,8 +803,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -724,8 +830,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -749,8 +857,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -774,8 +884,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -799,8 +911,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -824,6 +938,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -837,6 +955,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -852,6 +974,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -865,6 +991,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -880,6 +1010,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -893,6 +1027,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -908,6 +1046,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -916,17 +1058,21 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
-                    }
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
+                        }
                         break;
                     case '02hearts':
                         if($holdnum == $picknum + 1){
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case 'diamonds':
@@ -934,8 +1080,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case '004clubs':
@@ -943,8 +1091,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                 }
@@ -962,8 +1112,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -987,8 +1139,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1012,8 +1166,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1037,8 +1193,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1062,8 +1220,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1087,8 +1247,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1112,8 +1274,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
-                                $mycol6[0] = array_pop($inicol6);
-                                unset($inicol6[$inicol6length - 1]);
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         } elseif($pickmark == "empty"){
                             $temp = array_slice($mycol6, $holdcardindex);
@@ -1137,6 +1301,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -1150,6 +1318,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -1165,6 +1337,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -1178,6 +1354,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -1193,6 +1373,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -1206,6 +1390,10 @@
                                 }
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
+                                }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
                                 }
                             }
                         }
@@ -1221,6 +1409,10 @@
                                 for($i=0;$i<$removekength;$i++){
                                     unset($mycol6[$i + $holdcardindex]);
                                 }
+                                if(($inicol6length > 0) && ($mycol6length == 0)){
+                                    $mycol6[0] = array_pop($inicol6);
+                                    unset($inicol6[$inicol6length - 1]);
+                                }
                             }
                         }
                         break;
@@ -1229,17 +1421,21 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $spades[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
-                    }
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
+                        }
                         break;
                     case '02hearts':
                         if($holdnum == $picknum + 1){
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $hearts[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case 'diamonds':
@@ -1247,8 +1443,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $diamonds[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                     case '004clubs':
@@ -1256,8 +1454,10 @@
                             $temp = array_slice($mycol6, $holdcardindex, 1);
                             $clubs[] = array_shift($temp);
                             unset($mycol6[$holdcardindex]);
-                            $mycol6[0] = array_pop($inicol6);
-                            unset($inicol6[$inicol6length - 1]);
+                            if(($inicol6length > 0) && ($mycol6length == 0)){
+                                $mycol6[0] = array_pop($inicol6);
+                                unset($inicol6[$inicol6length - 1]);
+                            }
                         }
                         break;
                 }

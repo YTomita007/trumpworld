@@ -1,13 +1,13 @@
 <?php
 
     require 'deck_controller.php';
-    require 'inicol1_controller.php';
-    require 'inicol2_controller.php';
-    require 'inicol3_controller.php';
-    require 'inicol4_controller.php';
-    require 'inicol5_controller.php';
-    require 'inicol6_controller.php';
-    require 'inicol7_controller.php';
+    // require 'inicol1_controller.php';
+    // require 'inicol2_controller.php';
+    // require 'inicol3_controller.php';
+    // require 'inicol4_controller.php';
+    // require 'inicol5_controller.php';
+    // require 'inicol6_controller.php';
+    // require 'inicol7_controller.php';
     require '01spades_controller.php';
     require '02hearts_controller.php';
     require '03diamonds_controller.php';
@@ -225,8 +225,8 @@
         list($holdcardposition, $holdcardindex, $holdnum, $holdmark, $holdcard) = checkcard($_holdcard);
         list($pickcardposition, $pickcardindex, $picknum, $pickmark, $pickcard) = checkcard($_pickcard);
 
-        echo $holdcardposition . "<br>" . $holdcardindex . "<br>" . $holdnum . "<br>" . $holdmark . "<br>";
-        echo $pickcardposition . "<br>" . $pickcardindex . "<br>" . $picknum . "<br>" . $pickmark . "<br>";
+        // echo $holdcardposition . "<br>" . $holdcardindex . "<br>" . $holdnum . "<br>" . $holdmark . "<br>";
+        // echo $pickcardposition . "<br>" . $pickcardindex . "<br>" . $picknum . "<br>" . $pickmark . "<br>";
 
         switch($holdcardposition){
             case 'deckcard':
@@ -240,83 +240,83 @@
                     $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
                 );
                 break;
-            case 'col1card':
-                list(
-                    $inicol1, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol1shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol1,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col2card':
-                list(
-                    $inicol2, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol2shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol2,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col3card':
-                list(
-                    $inicol3, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol3shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol3,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col4card':
-                list(
-                    $inicol4, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol4shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol4,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col5card':
-                list(
-                    $inicol5, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol5shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol5,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col6card':
-                list(
-                    $inicol6, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol6shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol6,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
-            case 'col7card':
-                list(
-                    $inicol7, $spades, $hearts, $diamonds, $clubs, 
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                ) = inicol7shift(
-                    $holdcardposition, $holdnum, $holdmark, $holdcard, 
-                    $pickcardposition, $picknum, $pickmark, $pickcard, 
-                    $spades, $hearts, $diamonds, $clubs, $inicol7,
-                    $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
-                );
-                break;
+            // case 'col1card':
+            //     list(
+            //         $inicol1, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol1shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol1,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col2card':
+            //     list(
+            //         $inicol2, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol2shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol2,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col3card':
+            //     list(
+            //         $inicol3, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol3shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol3,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col4card':
+            //     list(
+            //         $inicol4, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol4shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol4,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col5card':
+            //     list(
+            //         $inicol5, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol5shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol5,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col6card':
+            //     list(
+            //         $inicol6, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol6shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol6,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
+            // case 'col7card':
+            //     list(
+            //         $inicol7, $spades, $hearts, $diamonds, $clubs, 
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     ) = inicol7shift(
+            //         $holdcardposition, $holdnum, $holdmark, $holdcard, 
+            //         $pickcardposition, $picknum, $pickmark, $pickcard, 
+            //         $spades, $hearts, $diamonds, $clubs, $inicol7,
+            //         $mycol1, $mycol2, $mycol3, $mycol4, $mycol5, $mycol6, $mycol7
+            //     );
+            //     break;
             case '01spades':
                 list(
                     $spades, $hearts, $diamonds, $clubs, 

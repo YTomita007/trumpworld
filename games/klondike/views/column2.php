@@ -22,30 +22,30 @@
                                     echo "</div>";
                                 }
                             } else {
-                                for($i=0;$i<$inicol2cnt;$i++){
-                                    echo "<div class='row-" . ($i+1) . "'>";
+                                for($i=1;$i<$inicol2cnt + 1;$i++){
+                                    echo "<div class='row-" . $i . "'>";
                                     echo "<img src='../cards/backcard.png'>";
                                     echo "</div>";
                                 }
                                 if($mycol2cnt == 1){
                                     echo "<div class='row-" . ($inicol2cnt + 1) . "'>";
-                                    echo "<input type='radio' name='pickcard' value='col2card" .$mycol2[0]['num'].$mycol2[0]['mark'] . "' id='mycol0020'>";
+                                    echo "<input type='radio' name='pickcard' value='mycol002" .$mycol2[0]['num'].$mycol2[0]['mark'] . "' id='mycol0020'>";
                                     echo "<label for='mycol0020'>";
                                     echo "<img src='../cards/" . $mycol2[0]['mark'].$mycol2[0]['num'] . ".png'>";
                                     echo "</label>";
                                     echo "</div>";
                                 } else {
-                                    echo "<div class='row-" . ($inicol2cnt + 1) .  "'>";
-                                    echo "<img src='../cards/" . $inicol2[$inicol2cnt - 1]['mark'].$inicol2[$inicol2cnt - 1]['num'] . ".png'>";
-                                    echo "</div>";
-                                    for($i=0;$i<$mycol2cnt;$i++){
-                                        echo "<div class='row-" . ($inicol2cnt + $i + 2) . "'>";
-                                        echo "<input type='radio' name='pickcard' value='mycol002" . $i . "__" . $mycol2[$mycol2cnt - 1]['num'].$mycol2[$mycol2cnt - 1]['mark'] . "' id='mycol002" . $i . "'>";
-                                        echo "<label for='mycol002" . $i . "'>";
-                                        echo "<img src='../cards/" . $mycol2[$i]['mark'].$mycol2[$i]['num'] . ".png'>";
-                                        echo "</label>";    
+                                    for($i=1;$i<$mycol2cnt;$i++){
+                                        echo "<div class='row-" . ($inicol2cnt + $i) . "'>";
+                                        echo "<img src='../cards/" . $mycol2[$i - 1]['mark'].$mycol2[$i - 1]['num'] . ".png'>";
                                         echo "</div>";
                                     }
+                                    echo "<div class='row-" . ($inicol2cnt + $mycol2cnt) . "'>";
+                                    echo "<input type='radio' name='pickcard' value='mycol002" .$mycol2[$mycol2cnt - 1]['num'].$mycol2[$mycol2cnt - 1]['mark'] . "' id='mycol0020'>";
+                                    echo "<label for='mycol0020'>";
+                                    echo "<img src='../cards/" . $mycol2[$mycol2cnt - 1]['mark'].$mycol2[$mycol2cnt - 1]['num'] . ".png'>";
+                                    echo "</label>";
+                                    echo "</div>";
                                 }
                             }
                         } else {
